@@ -1,1 +1,1 @@
-# AirBnB clone -- Holberton School
+#Bienvenido A HBNB
