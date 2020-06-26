@@ -1,2 +1,1 @@
-# AirBnB_clone
-AirBnB clone
+#Bienvenido A HBNB
