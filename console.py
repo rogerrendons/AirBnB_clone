@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
                 print(values_list)
 
     def do_update(self, arg):
-        models.storage.reload
+        models.storage.reload()
         listarg = arg.split(" ")
         if len(arg) == 0:
             print ("** class name missing **")
@@ -115,21 +115,19 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg) == 3:
             print("** value missing **")
             return
-        elif not eval(arg[0]):
+        elif not eval(listarg[0]):
             print("** class doesn't exist **")
         else:
-			Cont = arg[0] + "." + arg[1]
-			my_dictio = storage.all()
+            Cont = listarg[0] + "." + listarg[1]
+            print(Cont)
+            my_dictio = models.storage.all()
         try:
             new_info = my_dictio[Cont]
         except KeyError:
             print("** no instance found **")
             return
-        try:
-            attr_type = type(getattr(new_info, arg[2]))
-            arg[3] = attr_type(arg[3])
-        except AttributeError:
-            pass
+        attr_type = type(getattr(new_info, arg[2]))
+        arg[3] = attr_type(arg[3])
         setattr(new_info, arg[2], arg[3])
         new_info.save()
 
