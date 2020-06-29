@@ -4,9 +4,23 @@ import cmd
 import sys
 import models
 from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.user import User
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 
 class HBNBCommand(cmd.Cmd):
-    my_dictio = {"BaseModel": BaseModel}
+    my_dictio = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "Amenity": Amenity,
+        "City": City,
+        "Place": Place,
+        "Review": Review,
+        "State": State
+        }
     prompt = "(hbnb)"
 
     def do_quit(self, arg):
@@ -67,9 +81,8 @@ class HBNBCommand(cmd.Cmd):
                     del models.storage.all()[listarg[0] + "." + listarg[1]]
                     models.storage.save()
                     return
-
+"""
     def do_all(self, arg):
-        """Print string representation all instances based or not class name"""
         models.storage.reload()
         listarg = arg.split(" ")
         items = []
@@ -84,7 +97,6 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_update(self, arg):
-        """Update instance based class name and id adding or updating attribute"""
         listarg = arg.split(" ")
         if len(arg) == 0:
             print ("** class name missing **")
@@ -96,6 +108,6 @@ class HBNBCommand(cmd.Cmd):
             for value in models.storage.all().values():
                 if value.id != listarg[1]:
                     print("** no instance found **")
-
+"""
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
