@@ -5,8 +5,6 @@ from datetime import datetime
 import models
 import uuid
 
-time_format = "%Y-%m-%dT%H:%M:%S.%f"
-
 
 class BaseModel:
     """[summary]
