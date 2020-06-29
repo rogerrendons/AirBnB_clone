@@ -13,6 +13,8 @@ class BaseModel:
     """
 
     def __init__(self, *args, **kwargs):
+        """[summary]
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -48,13 +50,8 @@ class BaseModel:
             dict: object dict representation
         """
         dict_representation = self.__dict__.copy()
-
         dict_representation["__class__"] = self.__class__.__name__
-
-        if "created_at" in dict_representation:
-            dict_representation["created_at"] = self.created_at.isoformat()
-
-        if "update_at" in dict_representation:
-            dict_representation["updated_at"] = self.updated_at.isoformat()
+        dict_representation["created_at"] = self.created_at.isoformat()
+        dict_representation["updated_at"] = self.updated_at.isoformat()
 
         return dict_representation
