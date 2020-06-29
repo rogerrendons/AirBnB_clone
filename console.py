@@ -81,20 +81,22 @@ class HBNBCommand(cmd.Cmd):
                     del models.storage.all()[listarg[0] + "." + listarg[1]]
                     models.storage.save()
                     return
-"""
-    def do_all(self, arg):
-        models.storage.reload()
-        listarg = arg.split(" ")
-        items = []
-        if listarg[0] not in self.my_dictio:
-            print("** class doesn't exist **")
-        elif len(listarg) != 0:
-            items = models.storage.all(arg)
-        else:
-            items = models.storage.all()
-        print(list(items.values))
-        return
 
+    def do_all(self, arg):
+            """Prints string representations of instances"""
+            values_list = []
+            if len(arg) == 0:
+                for value in models.storage.all().values():
+                    values_list.append(str(value))
+                print(values_list)
+            elif arg not in self.my_dictio:
+                print("** class doesn't exist **")
+            else:
+                for key, value in models.storage.all().items():
+                    my_class = (key.split(".")[0])
+                    if my_class == arg:
+                        values_list.append(str(value))
+                print(values_list)
 
     def do_update(self, arg):
         listarg = arg.split(" ")
@@ -108,6 +110,6 @@ class HBNBCommand(cmd.Cmd):
             for value in models.storage.all().values():
                 if value.id != listarg[1]:
                     print("** no instance found **")
-"""
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
