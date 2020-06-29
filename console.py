@@ -126,13 +126,12 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
         try:
-            attr_type = type(getattr(new_info, args[2]))
-            args[3] = attr_type(args[3])
+            attr_type = type(getattr(new_info, arg[2]))
+            arg[3] = attr_type(arg[3])
         except AttributeError:
             pass
-        setattr(new_info, args[2], args[3])
+        setattr(new_info, arg[2], arg[3])
         new_info.save()
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
