@@ -95,13 +95,14 @@ class HBNBCommand(cmd.Cmd):
             elif arg not in self.my_dictio:
                 print("** class doesn't exist **")
             else:
-                for key, value in models.storage.all().items():
-                    my_class = (key.split(".")[0])
+                for Cont, value in models.storage.all().items():
+                    my_class = (Cont.split(".")[0])
                     if my_class == arg:
                         values_list.append(str(value))
                 print(values_list)
 
     def do_update(self, arg):
+        models.storage.reload
         listarg = arg.split(" ")
         if len(arg) == 0:
             print ("** class name missing **")
@@ -109,10 +110,29 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg.split(" ")) < 2:
             print("** instance id missing **")
+        elif len(arg) == 2:
+            print("** attribute name missing **")
+        elif len(arg) == 3:
+            print("** value missing **")
+            return
+        elif not eval(arg[0]):
+            print("** class doesn't exist **")
         else:
-            for value in models.storage.all().values():
-                if value.id != listarg[1]:
-                    print("** no instance found **")
+			Cont = arg[0] + "." + arg[1]
+			my_dictio = storage.all()
+        try:
+            new_info = my_dictio[Cont]
+        except KeyError:
+            print("** no instance found **")
+            return
+        try:
+            attr_type = type(getattr(new_info, args[2]))
+            args[3] = attr_type(args[3])
+        except AttributeError:
+            pass
+        setattr(new_info, args[2], args[3])
+        new_info.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
