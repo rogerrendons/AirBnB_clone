@@ -2,7 +2,7 @@
 **HBNB** is a project to make an Airbnb clone.
 It is a project in its first part of creation called **THE CONSOLE**
 
-![enter image description here]([https://rogerimages.s3.amazonaws.com/HBNB.png](https://rogerimages.s3.amazonaws.com/HBNB.png))
+![enter image description here](https://rogerimages.s3.amazonaws.com/HBNB.png)
 
 ## Description of the project
 HBNB is a project that allows us to know how the creation of a WEB is from its beginning, in this first part it begins with the construction of **THE CONSOLE**, where we will have a shell with the basic commands for the control of file information.
