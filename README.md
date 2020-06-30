@@ -66,7 +66,13 @@ With the command "create BaseModel" you can create a new model that is saved in 
 (hbnb)
 ```
 ## Show Base Model
-
+With the command "show BaseModel <id-model>" you can retrieve the information stored in the BaseModel file saved in the file.
+```
+(hbnb)
+(hbnb)show BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
+[BaseModel] (3f7606ff-e5f5-4d5a-8148-829674c353e9) {'id': '3f7606ff-e5f5-4d5a-8148-829674c353e9', 'created_at': datetime.datetime(2020, 6, 30, 12, 55, 35, 572984), 'updated_at': datetime.datetime(2020, 6, 30, 12, 55, 35, 573010)}
+(hbnb)
+```
 ## Destroy Base Model
 
 ## All Base Model
