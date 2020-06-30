@@ -13,7 +13,10 @@ This is used to command-line manage the information required for optimal functio
 
 ### Scope of the project
 The following diagram shows the scope of the first part of this project.
-![First Part Proyecy]([https://rogerimages.s3.amazonaws.com/FirstPart.png](https://rogerimages.s3.amazonaws.com/FirstPart.png))
+
+
+![enter image description here](https://rogerimages.s3.amazonaws.com/FirstPart.png)
+
 Mainly the creation of the console begins where it will be connected through JSON to a storage to have the ability to save and retrieve information.
 
 # How to start it
@@ -81,6 +84,8 @@ virtual@DESKTOP:~/AirBnB_clone$
 
 
 ## Console Commands
+
+
 
 
 
