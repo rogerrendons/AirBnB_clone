@@ -57,9 +57,14 @@ A simple command to return to the operating system shell, "quit", this allows yo
 (hbnb)quit
 virtual@DESKTOP:~/AirBnB_clone$ 
 ```
-## Create Base Model
-
-
+## Create BaseModel
+With the command "create BaseModel" you can create a new model that is saved in the file by means of JSON.
+```
+(hbnb)
+(hbnb)create BaseModel
+3f7606ff-e5f5-4d5a-8148-829674c353e9
+(hbnb)
+```
 ## Show Base Model
 
 ## Destroy Base Model
