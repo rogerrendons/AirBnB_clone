@@ -29,10 +29,15 @@ You will see this when you enter the console:
 
 # How to use it
 ## Commands
-
-
-
-
+Command | Description | Usage
+-------- | ----------- |-------- |
+**help**| Show commands. | **help**
+**quit**     | Exit program. | **quit**
+**create**  | Create instance.| **create** \<class\>
+**show**    | Print representation instance class & id | **show** \<class - id\>
+**destroy** | Delete instance | **destroy** \<class - id\>
+**all** | Prints all information instances | **all** \<class - id\>
+**update** | Updates information in class name and id | **update** \<class - id - key - value\>
 ## Examples
 ### Help
 in the example you will find the console start word $ ./console.py,
