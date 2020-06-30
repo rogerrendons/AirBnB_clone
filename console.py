@@ -86,26 +86,26 @@ class HBNBCommand(cmd.Cmd):
                     return
 
     def do_all(self, arg):
-            """Prints string representations of instances"""
-            values_list = []
-            if len(arg) == 0:
-                for value in models.storage.all().values():
+        """Prints string representations of instances"""
+        values_list = []
+        if len(arg) == 0:
+            for value in models.storage.all().values():
+                values_list.append(str(value))
+            print(values_list)
+        elif arg not in self.my_dictio:
+            print("** class doesn't exist **")
+        else:
+            for key, value in models.storage.all().items():
+                my_class = (key.split(".")[0])
+                if my_class == arg:
                     values_list.append(str(value))
-                print(values_list)
-            elif arg not in self.my_dictio:
-                print("** class doesn't exist **")
-            else:
-                for key, value in models.storage.all().items():
-                    my_class = (key.split(".")[0])
-                    if my_class == arg:
-                        values_list.append(str(value))
-                print(values_list)
+            print(values_list)
 
     def do_update(self, arg):
         models.storage.reload()
         listarg = arg.split(" ")
         if len(arg) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif listarg[0] not in self.my_dictio:
             print("** class doesn't exist **")
         elif len(arg.split(" ")) < 2:
@@ -130,6 +130,7 @@ class HBNBCommand(cmd.Cmd):
         arg[3] = attr_type(arg[3])
         setattr(new_info, arg[2], arg[3])
         new_info.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
