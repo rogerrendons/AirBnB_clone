@@ -132,7 +132,9 @@ now with the command "show BaseModel <id-model>" we can see how it has been upda
 
 
 ## Testing
-
+```
+$ python3 -m unittest discover tests
+```
 
 ## Using help
 
