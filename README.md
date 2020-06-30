@@ -172,3 +172,8 @@ AirBnB_clone/
 ```
 $ python3 -m unittest discover tests
 ```
+
+## Authors
+
+ - Felipe Layos, E-Mail: <jfelipelayos@gmail.com>
+ - Roger Rendon, E-Mail <1584@holbertonschool.com>
