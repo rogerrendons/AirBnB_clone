@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import os
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
@@ -8,7 +9,6 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from datetime import datetime
-import os
 
 
 class FileStorage:
@@ -33,8 +33,8 @@ class FileStorage:
         Args:
             obj (obj): obj to set format
         """
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        self.__objects[key] = obj
+        FileStorage.__objects["{}.{}"
+                              .format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
         """serializes to the JSON file
@@ -55,7 +55,7 @@ class FileStorage:
         if not os.path.isfile(self.__file_path):
             return self.__objects
         else:
-            with open(self.__file_path, mode="r") as file:
+            with open(self.__file_path, mode="r" encoding="utf8") as file:
                 file_data = json.load(file)
             for key, value in file_data.items():
                 self.__objects[key] = eval(value["__class__"])(**value)
