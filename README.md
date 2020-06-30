@@ -74,6 +74,20 @@ With the command "show BaseModel <id-model>" you can retrieve the information st
 (hbnb)
 ```
 ## Destroy Base Model
+With the command "destroy BaseModel <id-model>" you can delete the information stored in the BaseModel file.
+```
+(hbnb)
+(hbnb)destroy BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
+(hbnb)
+```
+Now again with "show BaseModel <id-model> you can check if this was removed."
+```
+(hbnb)
+(hbnb)show BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
+** no instance found **
+(hbnb)
+```
+it was effectively removed from the file.
 
 ## All Base Model
 
