@@ -26,4 +26,8 @@ You will see this when you enter the console:
 # How to use it
 ## Examples
 ### Help
+in the example you will find the console start word $ ./console.py,
+In it you can enter a command that allows the help of the commands that can be performed.
+Typing help and the command you want will receive help for this command to be used.
+``` 
 
