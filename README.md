@@ -110,12 +110,19 @@ ba42431a-3f3d-45f4-9385-dadb5aa24667
 ["[BaseModel] (95fefb0d-d73a-42f0-82cb-782708cfd6af) {'id': '95fefb0d-d73a-42f0-82cb-782708cfd6af', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553920), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553955)}", "[BaseModel] (686e4d9d-4255-4e73-bc09-98c189f8495f) {'id': '686e4d9d-4255-4e73-bc09-98c189f8495f', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 58, 617067), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 58, 617088)}", "[BaseModel] (ba42431a-3f3d-45f4-9385-dadb5aa24667) {'id': 'ba42431a-3f3d-45f4-9385-dadb5aa24667', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 59, 288827), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 59, 288848)}"]
 (hbnb)
 ```
-
 ## Update Base Model
-
-
-
-
+To update the information of one of the models is done with the command "update BaseModel <id-model>", in the following one of the models will be updated with the first_name "Juan".
+```
+(hbnb)
+(hbnb)update BaseModel 95fefb0d-d73a-42f0-82cb-782708cfd6af first_name "Juan"
+(hbnb)
+```
+now with the command "show BaseModel <id-model>" we can see how it has been updated, also see how it looks with all models.
+```
+(hbnb)show BaseModel 95fefb0d-d73a-42f0-82cb-782708cfd6af
+[BaseModel] (95fefb0d-d73a-42f0-82cb-782708cfd6af) {'id': '95fefb0d-d73a-42f0-82cb-782708cfd6af', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553920), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553955), 'first_name': '"Juan"'}
+(hbnb)
+```
 # Files
 
 
