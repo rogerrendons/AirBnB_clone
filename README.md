@@ -90,6 +90,26 @@ Now again with "show BaseModel <id-model> you can check if this was removed."
 it was effectively removed from the file.
 
 ## All Base Model
+With the command "all BaseModel" the information stored in the file is obtained.
+if it is empty the following is observed
+```
+(hbnb)all BaseModel
+[]
+(hbnb)
+```
+now let's see with information stored with 3 BaseModel
+```
+(hbnb)create BaseModel
+95fefb0d-d73a-42f0-82cb-782708cfd6af
+(hbnb)create BaseModel
+686e4d9d-4255-4e73-bc09-98c189f8495f
+(hbnb)create BaseModel
+ba42431a-3f3d-45f4-9385-dadb5aa24667
+(hbnb)
+(hbnb)all BaseModel
+["[BaseModel] (95fefb0d-d73a-42f0-82cb-782708cfd6af) {'id': '95fefb0d-d73a-42f0-82cb-782708cfd6af', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553920), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 56, 553955)}", "[BaseModel] (686e4d9d-4255-4e73-bc09-98c189f8495f) {'id': '686e4d9d-4255-4e73-bc09-98c189f8495f', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 58, 617067), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 58, 617088)}", "[BaseModel] (ba42431a-3f3d-45f4-9385-dadb5aa24667) {'id': 'ba42431a-3f3d-45f4-9385-dadb5aa24667', 'created_at': datetime.datetime(2020, 6, 30, 13, 19, 59, 288827), 'updated_at': datetime.datetime(2020, 6, 30, 13, 19, 59, 288848)}"]
+(hbnb)
+```
 
 ## Update Base Model
 
