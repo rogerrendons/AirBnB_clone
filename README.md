@@ -38,6 +38,9 @@ Command | Description | Usage
 **destroy** | Delete instance | **destroy** \<class - id\>
 **all** | Prints all information instances | **all** \<class - id\>
 **update** | Updates information in class name and id | **update** \<class - id - key - value\>
+
+For more information, check the examples below.
+
 ## Examples
 ### Help
 in the example you will find the console start word $ ./console.py,
