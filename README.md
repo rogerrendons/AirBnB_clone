@@ -2,7 +2,7 @@
 **HBNB** is a project to make an Airbnb clone.
 It is a project in its first part of creation called **THE CONSOLE**
 
-![enter image description here](https://rogerimages.s3.amazonaws.com/HBNB.png)
+![enter image description here]([https://rogerimages.s3.amazonaws.com/HBNB.png](https://rogerimages.s3.amazonaws.com/HBNB.png))
 
 ## Description of the project
 HBNB is a project that allows us to know how the creation of a WEB is from its beginning, in this first part it begins with the construction of **THE CONSOLE**, where we will have a shell with the basic commands for the control of file information.
@@ -62,7 +62,6 @@ virtual@DESKTOP:~/AirBnB_clone$
 ## Create BaseModel
 With the command "create BaseModel" you can create a new model that is saved in the file by means of JSON.
 ```
-(hbnb)
 (hbnb)create BaseModel
 3f7606ff-e5f5-4d5a-8148-829674c353e9
 (hbnb)
@@ -70,7 +69,6 @@ With the command "create BaseModel" you can create a new model that is saved in 
 ## Show Base Model
 With the command "show BaseModel <id-model>" you can retrieve the information stored in the BaseModel file saved in the file.
 ```
-(hbnb)
 (hbnb)show BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
 [BaseModel] (3f7606ff-e5f5-4d5a-8148-829674c353e9) {'id': '3f7606ff-e5f5-4d5a-8148-829674c353e9', 'created_at': datetime.datetime(2020, 6, 30, 12, 55, 35, 572984), 'updated_at': datetime.datetime(2020, 6, 30, 12, 55, 35, 573010)}
 (hbnb)
@@ -78,19 +76,16 @@ With the command "show BaseModel <id-model>" you can retrieve the information st
 ## Destroy Base Model
 With the command "destroy BaseModel <id-model>" you can delete the information stored in the BaseModel file.
 ```
-(hbnb)
 (hbnb)destroy BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
 (hbnb)
 ```
 Now again with "show BaseModel <id-model> you can check if this was removed."
 ```
-(hbnb)
 (hbnb)show BaseModel 3f7606ff-e5f5-4d5a-8148-829674c353e9
 ** no instance found **
 (hbnb)
 ```
 it was effectively removed from the file.
-
 ## All Base Model
 With the command "all BaseModel" the information stored in the file is obtained.
 if it is empty the following is observed
@@ -126,23 +121,41 @@ now with the command "show BaseModel <id-model>" we can see how it has been upda
 (hbnb)
 ```
 # Files
-
-
-## Usage
-
+This is the project file structure according to requirements.
+```
+AirBnB_clone/
+├── AUTHORS
+├── console.py
+├── models
+│   ├── amenity.py
+│   ├── base_model.py
+│   ├── city.py
+│   ├── engine
+│   │   ├── file_storage.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   ├── place.py
+│   ├── review.py
+│   ├── state.py
+│   └── user.py
+├── README.md
+└── tests
+    ├── __init__.py
+    └── test_models
+        ├── __init__.py
+        ├── test_amenity.py
+        ├── test_base_model.py
+        ├── test_city.py
+        ├── test_engine
+        │   ├── __init__.py
+        │   └── test_file_storage.py
+        ├── test_place.py
+        ├── test_review.py
+        ├── test_state.py
+        └── test_user.py
+```
 
 ## Testing
 ```
 $ python3 -m unittest discover tests
 ```
-
-## Using help
-
-
-## Console Commands
-
-
-
-
-
-
