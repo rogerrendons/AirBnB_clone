@@ -95,8 +95,8 @@ class HBNBCommand(cmd.Cmd):
             elif arg not in self.my_dictio:
                 print("** class doesn't exist **")
             else:
-                for Cont, value in models.storage.all().items():
-                    my_class = (Cont.split(".")[0])
+                for key, value in models.storage.all().items():
+                    my_class = (key.split(".")[0])
                     if my_class == arg:
                         values_list.append(str(value))
                 print(values_list)
