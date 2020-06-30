@@ -48,4 +48,41 @@ Prints string representation instance based on the class name
 Delete instance based on class name and id
 (hbnb)
 ```
+### Exit console
+A simple command to return to the operating system shell, "quit", this allows you to exit the console.
+```
+(hbnb)
+(hbnb)quit
+virtual@DESKTOP:~/AirBnB_clone$ 
+```
+## Create Base Model
+
+
+## Show Base Model
+
+## Destroy Base Model
+
+## All Base Model
+
+## Update Base Model
+
+
+
+
+# Files
+
+
+## Usage
+
+
+## Testing
+
+
+## Using help
+
+
+## Console Commands
+
+
+
 
