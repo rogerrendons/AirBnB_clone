@@ -1,11 +1,22 @@
 #!/usr/bin/python3
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 from datetime import datetime
 import os
 
 
 class FileStorage:
+    """[summary]
+
+    Returns:
+        [type]: [description]
+    """
 
     __file_path = "file.json"
     __objects = {}
@@ -30,22 +41,10 @@ class FileStorage:
         """
         new_dictio = {}
 
-        def myconverter(obj):
-            """convert obj to str
-
-            Args:
-                obj (obj): object to convert
-
-            Returns:
-                obj: obj str representarion
-            """
-            if isinstance(obj, datetime):
-                return obj.__str__()
-
-        for key in self.__objects:
-            new_dictio[key] = self.__objects[key].to_dict()
         with open(self.__file_path, mode="w", encoding="utf8") as file:
-            json.dump(new_dictio, file, default=myconverter)
+            for key, value in self.__objects.items():
+                new_dictio[key] = value.to_dict()
+            json.dump(new_dictio, file)
 
     def reload(self):
         """ deserializes the JSON file
