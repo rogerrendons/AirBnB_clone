@@ -30,4 +30,22 @@ in the example you will find the console start word $ ./console.py,
 In it you can enter a command that allows the help of the commands that can be performed.
 Typing help and the command you want will receive help for this command to be used.
 ``` 
+$ ./console.py 
+(hbnb)
+(hbnb)help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show
+
+(hbnb)help quit
+Quit - Exit console
+(hbnb)
+(hbnb)help show
+Prints string representation instance based on the class name
+(hbnb)
+(hbnb)help destroy
+Delete instance based on class name and id
+(hbnb)
+```
 
