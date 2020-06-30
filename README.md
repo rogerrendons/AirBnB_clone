@@ -28,6 +28,11 @@ To start the console, just type in the command line of the main shell of your op
 You will see this when you enter the console:
 
 # How to use it
+## Commands
+
+
+
+
 ## Examples
 ### Help
 in the example you will find the console start word $ ./console.py,
