@@ -60,11 +60,12 @@ class HBNBCommand(cmd.Cmd):
         else:
             for value in models.storage.all().values():
                 if value.id != listarg[1]:
-                    print("** no instance found **")
+                    continue
                 elif value.__class__.__name__ == listarg[0] and\
                         value.id == listarg[1]:
                     print(value.__str__())
                     return
+            print("** no instance found **")
 
     def do_destroy(self, arg):
         """Delete instance based on class name and id"""
@@ -102,34 +103,35 @@ class HBNBCommand(cmd.Cmd):
             print(values_list)
 
     def do_update(self, arg):
+        """[summary]
+
+        Args:
+            arg ([type]): [description]
+        """
         models.storage.reload()
         listarg = arg.split(" ")
-        if len(arg) == 0:
+        if len(arg) <= 0:
             print("** class name missing **")
-        elif listarg[0] not in self.my_dictio:
-            print("** class doesn't exist **")
-        elif len(arg.split(" ")) < 2:
-            print("** instance id missing **")
-        elif len(arg) == 2:
-            print("** attribute name missing **")
-        elif len(arg) == 3:
-            print("** value missing **")
             return
         elif not eval(listarg[0]):
             print("** class doesn't exist **")
-        else:
-            Cont = listarg[0] + "." + listarg[1]
-            print(Cont)
-            my_dictio = models.storage.all()
+        elif len(arg.split(" ")) < 2:
+            print("** instance id missing **")
+            return
+        elif len(arg) < 3:
+            print("** attribute name missing **")
+            return
+        elif len(arg) < 4:
+            print("** value missing **")
+            return
         try:
-            new_info = my_dictio[Cont]
+            key = listarg[0] + "." + listarg[1]
+            objec = (models.storage.all())[key]
+            setattr(objec, listarg[2], listarg[3])
+            models.storage.save()
         except KeyError:
             print("** no instance found **")
             return
-        attr_type = type(getattr(new_info, arg[2]))
-        arg[3] = attr_type(arg[3])
-        setattr(new_info, arg[2], arg[3])
-        new_info.save()
 
 
 if __name__ == '__main__':
