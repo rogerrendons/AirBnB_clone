@@ -26,6 +26,38 @@ class TestPlace(unittest.TestCase):
         """
         self.assertIsNotNone(Place.__doc__)
 
+class PlaceTest(unittest.TestCase):
+    def  setUp(self):
+        """
+        objects for testing
+        """
+        self.testing = Place()
+        self.testing2 = Place()
+
+    def test_instantiation(self):
+        """
+        class attributes initialization testing
+         """
+        self.assertIsInstance(self.testing, Place)
+        self.assertIsInstance(self.testing2, Place)
+        self.assertTrue(hasattr(self.testing, "name"))
+        self.assertTrue(hasattr(self.testing2, "user_id"))
+        self.assertTrue(hasattr(self.testing, "city_id"))
+        self.assertTrue(hasattr(self.testing2, "latitude"))
+        self.assertTrue(hasattr(self.testing, "latitude"))
+        self.assertTrue(self.testing.id != self.testing2.id)
+
+    def test_types(self):
+        """
+        isntance attribute
+        """
+        self.assertEqual(self.testing.name, "")
+        self.assertTrue(type(self.testing.city_id) is str)
+        self.assertTrue(type(self.testing.user_id) is str)
+        self.assertTrue(type(self.testing.description) is str)
+        self.assertTrue(type(self.testing.longitude) is float)
+        self.assertTrue(type(self.testing.latitude) is float)
+
 
 if __name__ == "__main__":
     unittest.main()

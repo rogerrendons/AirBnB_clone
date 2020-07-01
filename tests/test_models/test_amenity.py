@@ -21,8 +21,7 @@ class TestAmenity(unittest.TestCase):
     """
 
     def test_pep8(self):
-        """test pep8
-            """
+        """test pep8"""
         style = pep8.StyleGuide()
         pep8_check = style.check_files(["models/amenity.py"])
         self.assertEqual(pep8_check.total_errors, 0)
