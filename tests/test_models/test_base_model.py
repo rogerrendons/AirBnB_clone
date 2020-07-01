@@ -35,7 +35,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsNotNone(BaseModel.save.__doc__)
         self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
-class BaseModelTest(unittest.TestCase):
     def  setUp(self):
         """objects to be tested"""
         self.testing = BaseModel()
