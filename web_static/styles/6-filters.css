@@ -62,6 +62,10 @@ li {
     padding: 30px;
 }
 
+.popover li h2{
+    font-size: 16px;
+}
+
 .popover li ul li {
     margin-top: -10px;
     margin-bottom: 20px;
