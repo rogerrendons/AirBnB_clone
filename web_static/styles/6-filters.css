@@ -53,13 +53,13 @@ li {
 
 .popover {
     display: none;
-    z-index: 0;
     background-color: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 0px 0px 4px 4px;
     margin-top: 16.8px;
     margin-bottom: 0px;
     padding: 30px;
+    z-index: 1;
 }
 
 .popover li h2{
